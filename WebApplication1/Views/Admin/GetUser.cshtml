@@ -1,0 +1,23 @@
+﻿@model WebApplication1.Models.Siniflar.User
+@{
+    ViewBag.Title = "GetUser";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Update</h2>
+<br />
+@using (Html.BeginForm("Update", "Admin", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.UserName)
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Password)
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kullanıcı Güncelle</button>
+}
+

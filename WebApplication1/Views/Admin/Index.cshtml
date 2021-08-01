@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Admin Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Kullanıcı Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.UserName</td>
+            <td><a href="/Admin/Delete/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/GetUser/@x.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Add/" class="btn btn-primary">Yeni kullanıcı ekle</a>
+
